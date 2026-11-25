@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#102b24" />
+  <meta name="description" content="CleanCity - Garbage overflow reporting and sanitation task management demo." />
+  <title>CleanCity | Garbage Reporting Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <main id="auth-view" class="auth-shell">
+    <section class="auth-visual">
+      <div class="brand"><span class="brand-icon">C</span><span>CleanCity</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">COMMUNITY · CLEANLINESS · ACTION</p>
+        <h1>A cleaner city<br><em>starts with us.</em></h1>
+        <p>Report overflowing waste, follow progress, and help your neighbourhood stay clean.</p>
+      </div>
+      <div class="visual-foot"><span class="pulse-dot"></span> Local browser demonstration</div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="mobile-brand brand"><span class="brand-icon">C</span><span>CleanCity</span></div>
+        <p class="eyebrow">WELCOME TO CLEANCITY</p>
+        <h2 id="auth-title">Sign in</h2>
+        <p class="muted" id="auth-subtitle">Access your reporting workspace.</p>
+        <form id="login-form" class="form-stack">
+          <label>Email address<input id="login-email" type="email" autocomplete="username" placeholder="you@example.com" required /></label>
+          <label>Password<input id="login-password" type="password" autocomplete="current-password" placeholder="Enter your password" required /></label>
+          <button class="btn btn-primary full" type="submit">Sign in <span>→</span></button>
+        </form>
+        <div id="register-area" class="register-area hidden">
+          <div class="form-divider"><span>or create a citizen account</span></div>
+          <form id="register-form" class="form-stack">
+            <label>Full name<input id="register-name" minlength="2" maxlength="70" required placeholder="Your full name" /></label>
+            <label>Email address<input id="register-email" type="email" required placeholder="you@example.com" /></label>
+            <label>Password<input id="register-password" type="password" minlength="6" required placeholder="At least 6 characters" /></label>
+            <button class="btn btn-outline full" type="submit">Create citizen account</button>
+          </form>
+        </div>
+        <button id="toggle-register" class="link-button">New here? Create a citizen account</button>
+        <div class="demo-box"><strong>Demo accounts</strong><div><span>Admin</span><code>admin@cleancity.demo</code><code>Admin@123</code></div><div><span>Worker</span><code>worker@cleancity.demo</code><code>Worker@123</code></div><div><span>Citizen</span><code>citizen@cleancity.demo</code><code>Citizen@123</code></div></div>
+        <p class="security-foot">Demo only: accounts and records are stored in this browser, not securely on a server.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-view" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand sidebar-brand"><span class="brand-icon">C</span><span>CleanCity</span></div>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav id="side-nav" class="side-nav" aria-label="Main navigation"></nav>
+      <div class="sidebar-bottom"><div class="local-badge"><span class="pulse-dot"></span><span>Browser storage active</span></div><button id="reset-demo" class="sidebar-link danger-link">↻ Reset demo data</button></div>
+    </aside>
+    <section class="main-area">
+      <header class="topbar"><button id="menu-toggle" class="icon-button" aria-label="Toggle menu">☰</button><div><p class="top-eyebrow">SANITATION MANAGEMENT</p><h2 id="page-title">Overview</h2></div><div class="top-user"><div class="avatar" id="user-avatar">U</div><div><strong id="user-name">User</strong><small id="user-role">Citizen</small></div><button id="logout-btn" class="btn btn-light">Sign out</button></div></header>
+      <main id="page-content" class="page-content"></main>
+      <footer class="app-footer">CleanCity demo · Data stays in this browser · <button id="export-data" class="inline-link">Export data</button></footer>
+    </section>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
